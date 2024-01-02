@@ -1,0 +1,15 @@
+  let mut display: Vec<&str> = vec!["_"; secret_word.len()];
+    println!("{}", display.join(" "));
+
+    loop {
+        println!("Guess a letter ({} guesses left):", guesses_left);
+        let mut guess = String::new();
+        io::stdin().read_line(&mut guess)
+            .expect("Failed to read line");
+
+        let guess = guess.trim();
+
+        if guess.len() != 1 {
+            println!("Please enter a single letter.");
+            continue;
+        }
